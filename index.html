@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+
+<body>
+
+<b>Hostname: </b>
+<b id="hname"></b>
+
+<script>
+	let hostname = location.hostname;
+	document.getElementById("hname").innerHTML = hostname;
+</script>
+
+
+<h1>Character Counter</h1>
+
+<h2>Enter the text whose characters to be counted:</h2>
+
+<textarea maxlength="500" id="message"rows="5" cols="100"></textarea>
+<div id="counter"></div>
+
+<script>
+  const messageEle = document.getElementById('message');
+  const counterEle = document.getElementById('counter');
+
+  messageEle.addEventListener('input', function (e) {
+      const target = e.target;
+
+      // Get the `maxlength` attribute
+      const maxLength = target.getAttribute('maxlength');
+
+      // Count the current number of characters
+      const currentLength = target.value.length;
+
+      counterEle.innerHTML = `${currentLength}/${maxLength}`;
+  });
+
+</script>
+
+
+</body>
+</html>
